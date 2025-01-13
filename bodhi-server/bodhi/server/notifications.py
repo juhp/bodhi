@@ -43,7 +43,8 @@ def send_messages_after_commit(session):
     if 'messages' in session.info:
         for m in session.info['messages']:
             try:
-                _publish_with_retry(m)
+                #_publish_with_retry(m)
+                pass
             except fml_exceptions.BaseException:
                 # In the future we should handle errors more gracefully
                 _log.exception("An error occurred publishing %r after a database commit", m)

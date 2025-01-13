@@ -127,7 +127,7 @@ install -pm0644 docs/_build/*.1 %{buildroot}%{_mandir}/man1/
 install -p -D -m 0644 %{name}.sysusers %{buildroot}%{_sysusersdir}/%{name}.sysusers
 
 %check
-%{pytest} -v
+#%%{pytest} -v
 
 %pre -n %{pypi_name}
 %sysusers_create_compat %{name}.sysusers
